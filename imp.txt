@@ -1,0 +1,31 @@
+
+maven is important as:-
+1) it manages and maintains the project. It can also act as build management tool
+2) no need of changing all the incompatible files and versions in future as it takes cares of the build and versions
+3) can be integrated with Jenkins which is a continuous integration and execution tool.
+4) all the jars and softwares are present in the maven website that is maven repositiory
+5)maven project automatically handles all the jars from its repository for all the test suites that we use either selenium or appium or restApi
+we use the dependency i.e just 4 lines of code and maven automatically pulls all the jars required for that. that is why it is called project management too.
+Just by changing the version no in dependency in the pom.xml file we can avoid the again updating of builds in future compatibility of new versions.
+download maven from mvnrepository and set env var for it and give the path in path.
+select new--> project --> maven project.
+we get the complete folder structure that we need for our maven project
+
+pom.xml file:
+group id is the test packagee name
+artifact id is the project name it is like sub name exm: mavenjava
+add all the dependency in pom.xml file for selenium or appium or restapi whatever we are using.
+
+maven commands for executing the test cases in a maven project:-
+1) mvn clean
+2) mvn compile
+3) mvn test
+
+for running just single test case command is --> mvn -Dtest=javaclassTest test
+
+--> make sure the test class name must end with "test" word then only maven understands it is a test case
+--> we need "maven surefire plugin" to execute the test cases in maven project (get the dependency "surefire plugin" from maven.apache.org
+
+we can execute our testng xml tests directly from maven commands in cmd.
+we have to use <configuration> dependency for adding testng.xml in our pom,xml file
+for multiple testng suite we have to use profiles-- we can run only regression profile or only smoke profile
